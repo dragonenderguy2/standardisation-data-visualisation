@@ -1,29 +1,29 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/index.js', // Point d'entrée principal de l'application
+    entry: './src/index.js', // Main entry point of the application
     output: {
-        path: path.resolve(__dirname, 'dist'), // Répertoire de sortie
-        filename: 'bundle.js', // Nom du fichier de sortie
+        path: path.resolve(__dirname, 'dist'), // Output directory
+        filename: 'bundle.js', // Name of the output file
     },
     devServer: {
-        static: './dist', // Dossier à servir pour le développement
+        static: './dist', // Directory to serve for development
     },
     module: {
         rules: [
             {
-                test: /\.js$/, // Regex pour tous les fichiers .js
-                exclude: /node_modules/, // Exclure le dossier node_modules
+                test: /\.js$/, // Regex for all .js files
+                exclude: /node_modules/, // Exclude the node_modules folder
                 use: {
-                    loader: 'babel-loader', // Utilisation de babel-loader pour transpiler le code
+                    loader: 'babel-loader', // Use babel-loader to transpile the code
                     options: {
-                        presets: ['@babel/preset-env', '@babel/preset-react'], // Presets pour Babel
+                        presets: ['@babel/preset-env', '@babel/preset-react'], // Presets for Babel
                     },
                 },
             },
         ],
     },
     resolve: {
-        extensions: ['.js', '.jsx'], // Extensions à résoudre lors de l'importation
+        extensions: ['.js', '.jsx'], // Extensions to resolve when importing
     },
 };
