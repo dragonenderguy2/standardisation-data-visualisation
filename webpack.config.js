@@ -12,7 +12,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: \.js$, // Regex pour tous les fichiers .js
+                test: /\.js$/, // Regex pour tous les fichiers .js
                 exclude: /node_modules/, // Exclure le dossier node_modules
                 use: {
                     loader: 'babel-loader', // Utilisation de babel-loader pour transpiler le code
